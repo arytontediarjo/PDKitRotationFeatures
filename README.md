@@ -46,7 +46,7 @@ These are the features that will be computed:
 
 9. **Rotation Speed (Omega)**: Measures rotation speed based on inferred rotation period (radians during inferred rotation period/rotation duration)
 
-## Citations
+## References
 1. Rotation-Detection Paper : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5811655/
 2. PDKit Docs: https://pdkit.readthedocs.io/en/latest/gait.html
 3. PDKit Gait Source Codes  : https://github.com/pdkit/pdkit
