@@ -5,8 +5,8 @@
 This repository is used for retrieving gait features from accelerometer and gyroscope sensor data based on PDKit walking features with some extra functionality and QC filtering (rotation and variance cutoff).  
 
 ## Added Functionality
-- Additional PDKit Error Handling
-- Added windowing data processing
+- Additional Error Handling
+- Added windowing feature computation
 - Added QC on detecting rotation 
 
 ## Installation
