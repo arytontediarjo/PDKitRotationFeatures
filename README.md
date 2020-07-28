@@ -2,7 +2,7 @@
 
 <b> Author: Aryton Tediarjo, Larsson Omberg </b>
 
-This repository is used for retrieving gait features from accelerometer and gyroscope based on external libraries and research implementations. 
+This repository is used for retrieving gait features from accelerometer and gyroscope sensor data based on PDKit walking features with some extra functionality and QC filtering (rotation and variance cutoff).  
 
 ## Added Functionality
 - Additional PDKit Error Handling
@@ -18,7 +18,7 @@ pip install PDKitRotationFeatures
 ```python
 import PDKitRotationFeatures
 gf = rotation_pdkit_gait_features.GaitFeaturize()
-gf.run_gait_feature_pipeline(accel sensor data <t,x,y,z>, gyro <t,x,y,z>)
+gf.run_gait_feature_pipeline(accel sensor data <t,x,y,z>, gyro sensor data <t,x,y,z>)
 ```
 
 ## Feature Dictionaries
