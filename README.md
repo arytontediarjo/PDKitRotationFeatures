@@ -11,18 +11,20 @@ This repository is used for retrieving gait features from accelerometer and gyro
 
 ## Installation
 ```bash
-pip install PDKitRotationFeatures
+pip install git+https://github.com/arytontediarjo/PDKitRotationFeatures.git
 ```
 
 ## Use Cases
 ```python
-import PDKitRotationFeatures
-gf = rotation_pdkit_gait_features.GaitFeaturize()
-gf.run_gait_feature_pipeline(accel sensor data <t,x,y,z>, gyro sensor data <t,x,y,z>)
+from PDKitRotationFeatures import gait_module  
+featureObjs = gait_module.GaitFeaturize(window_size = 256) ##refer to module for additional parameter
+featureObjs.run_gait_feature_pipeline(accel sensor data <t,x,y,z>, gyro sensor data <t,x,y,z>)
 ```
 
 ## Feature Dictionaries
 
 
+
 ## Citations
+
 
