@@ -6,7 +6,7 @@ setup(
     description='package wrapper for gait feature pipeline',
     author='Aryton Tediarjo and Larsson Omberg',
     author_email='aryton.tediarjo@sagebase.org',
-    packages=['PDKitRotationFeatures']
+    packages=['PDKitRotationFeatures'],
     install_requires=["numpy",
                       "pandas==1.0.3",
                       "scipy",
