@@ -1,6 +1,6 @@
 # Gait Feature Extraction using PDKit & Rotation Features
 
-Author: Aryton Tediarjo, Larsson Omberg
+<b> Author: Aryton Tediarjo, Larsson Omberg </b>
 
 This repository is used for retrieving gait features from accelerometer and gyroscope based on external libraries and research implementations. 
 
@@ -24,5 +24,5 @@ gf.run_gait_feature_pipeline(accel sensor data <t,x,y,z>, gyro <t,x,y,z>)
 ## Feature Dictionaries
 
 
-##
+## Citations
 
