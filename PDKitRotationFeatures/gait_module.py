@@ -376,7 +376,7 @@ class GaitFeatures:
                 start = crossing
         return rotation_dict
 
-    def segment_gait_sequence(self, accel_dataframe, periods):
+    def segment_gait_period(self, accel_dataframe, periods):
         """
         Function to chunk dataframe into several periods of rotational
         and non-rotational sequences into List.
@@ -439,7 +439,7 @@ class GaitFeatures:
                  "chunk": "walk_chunk_%s" % num_walk_window})
         return chunk_list
 
-    def featurize_data_segments(self,list_of_dataframe_dicts, rotation_dict):
+    def featurize_gait_segment(self,list_of_dataframe_dicts, rotation_dict):
         """
         Function to featurize list of rotation-segmented dataframe chunks with
         moving windows, and returns list of dictionary with all the pdkit
@@ -548,8 +548,8 @@ class GaitFeatures:
                 rotation_dict = self.detect_rotation_timepoint(resampled_rotation, 
                                                                self.rotation_detection_axis)
             periods = [v["period"] for k, v in rotation_dict.items()]
-            list_df_chunks = self.segment_gait_sequence(resampled_accel, periods)
-            list_of_feature_dict = self.featurize_data_segments(list_df_chunks, rotation_dict)
+            list_df_chunks = self.segment_gait_period(resampled_accel, periods)
+            list_of_feature_dict = self.featurize_gait_segment(list_df_chunks, rotation_dict)
             result = pd.DataFrame(list_of_feature_dict)
             result["error"] = np.nan
             return result
