@@ -17,8 +17,8 @@ pip install git+https://github.com/arytontediarjo/PDKitRotationFeatures.git
 ## Use Cases
 ```python
 from PDKitRotationFeatures import gait_module  
-featureObjs = gait_module.GaitFeaturize(window_size = 256) ##refer to module for additional parameter
-featureObjs.run_gait_feature_pipeline(accel sensor data <t,x,y,z>, gyro sensor data <t,x,y,z>)
+featureObjs = gait_module.GaitFeatures(window_size = 256) ##refer to module for additional parameter
+featureObjs.run_pipeline(accel sensor data <t,x,y,z>, gyro sensor data <t,x,y,z>)
 ```
 
 ## Feature Processing Information
