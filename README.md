@@ -2,7 +2,8 @@
 
 **Author: Aryton Tediarjo, Larsson Omberg**
 
-This repository is used for retrieving gait features from accelerometer and gyroscope sensor data based on PDKit walking features with some extra functionality and QC filtering (rotation and variance cutoff).  
+## About
+This repository is used for retrieving gait features from accelerometer and gyroscope data. It acts as a wrapper to an external Python package Parkinson Disease Featurization pacakge called [pdkit](https://github.com/pdkit/pdkit) with an additional QC handling of detecting rotation when user is walking based on [rotation detection paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5811655/).
 
 ## Added Functionality
 - Additional Error Handling
@@ -10,19 +11,23 @@ This repository is used for retrieving gait features from accelerometer and gyro
 - Added QC on detecting rotation 
 
 ## Installation
+
+#### Requirements: 
+Python 3 and above
+
+#### Installing as a Github Python Package
 ```bash
 pip install git+https://github.com/arytontediarjo/PDKitRotationFeatures.git
 ```
 
-## Use Cases
+## Use Case
 ```python
 from PDKitRotationFeatures import gait_module  
-featureObjs = gait_module.GaitFeatures(window_size = 256) ##refer to module for additional parameter
+featureObjs = gait_module.GaitFeatures(window_size = 256, detect_rotation=True) ##refer to module for additional parameter
 featureObjs.run_pipeline(accel sensor data <t,x,y,z>, gyro sensor data <t,x,y,z>)
 ```
 
-## Feature Processing Information
-
+## Feature Dictionary
 In the feature processing steps, the module will try to detect rotation given a gyroscope information. After separating the rotation sequence from the longitudinal data, features will be computed in smaller windows (default to 512 ~ around 5 seconds given 100Hz sampling frequency).
 
 These are the features that will be computed:
