@@ -130,3 +130,26 @@ def get_pval_and_corr(data, metric):
     adj_pval = multipletests(p_val["p-value"], alpha = 0.05, method = "bonferroni")[1]
     p_val["adjusted-p-value"] = adj_pval
     return(p_val)
+
+def get_p_val_metrics(data, feat_used):
+    p_val = {}
+    for feat in feat_used:
+        control = data[data["PD"] == 0].dropna()[feat]
+        PD = data[data["PD"] == 1].dropna()[feat]
+        scaled_control = (control - control.min())/(control.max()-control.min())
+        scaled_PD = (PD - PD.min())/(PD.max()-PD.min())
+
+        t, pvalue_non_parametric = stats.mannwhitneyu(
+            scaled_PD,
+            scaled_control, alternative=None)
+
+        t, pvalue_parametric = stats.ttest_ind(
+            scaled_PD,
+            scaled_control, 
+            equal_var = False)
+        p_val[feat] = [pvalue_non_parametric, pvalue_parametric]
+
+    p_val = pd.DataFrame(p_val).T.rename({0:"Mann-Whitney", 1:"T-test"}, axis = 1)
+    p_val["corrected_p_val"] = multipletests(p_val["T-test"], method = "bonferroni")[1]
+    p_val = p_val.sort_values("corrected_p_val")
+    return p_val
