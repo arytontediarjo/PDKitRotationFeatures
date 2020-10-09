@@ -313,6 +313,7 @@ class GaitFeatures:
             feature_dict["%s_energy_freeze_index" % axis] = energy_freeze_index
             feature_dict["%s_loco_freeze_index" %
                          axis] = locomotor_freeze_index
+            feature_dict["%s_step_duration_arr"] = 
             feature_dict["%s_avg_step_duration" % axis] = avg_step_duration
             feature_dict["%s_sd_step_duration" % axis] = sd_step_duration
             feature_dict["%s_cadence" % axis] = cadence
@@ -324,6 +325,9 @@ class GaitFeatures:
             feature_dict["%s_step_regularity" % axis] = step_regularity
             feature_dict["%s_stride_regularity" % axis] = stride_regularity
             feature_dict["%s_symmetry" % axis] = symmetry
+            feature_dict["%s_step_duration_array"%axis] = step_durations
+            feature_dict["%s_stride1_duration_array"%axis] = stride_durations1
+            feature_dict["%s_stride2_duration_array"%axis] = stride_durations2
         feature_dict["window_size"] = window_duration
         feature_dict["window_start"] = window_start
         feature_dict["window_end"] = window_end
