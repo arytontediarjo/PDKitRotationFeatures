@@ -313,7 +313,6 @@ class GaitFeatures:
             feature_dict["%s_energy_freeze_index" % axis] = energy_freeze_index
             feature_dict["%s_loco_freeze_index" %
                          axis] = locomotor_freeze_index
-            feature_dict["%s_step_duration_arr"] = 
             feature_dict["%s_avg_step_duration" % axis] = avg_step_duration
             feature_dict["%s_sd_step_duration" % axis] = sd_step_duration
             feature_dict["%s_cadence" % axis] = cadence
