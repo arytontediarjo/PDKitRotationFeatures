@@ -325,9 +325,9 @@ class GaitFeatures:
             feature_dict["%s_step_regularity" % axis] = step_regularity
             feature_dict["%s_stride_regularity" % axis] = stride_regularity
             feature_dict["%s_symmetry" % axis] = symmetry
-            feature_dict["%s_step_duration_array"%axis] = step_durations
-            feature_dict["%s_stride1_duration_array"%axis] = stride_durations1
-            feature_dict["%s_stride2_duration_array"%axis] = stride_durations2
+            feature_dict["%s_step_durations_array" % axis] = step_durations
+            feature_dict["%s_stride1_durations_array" % axis] = stride_durations1
+            feature_dict["%s_stride2_durations_array" % axis] = stride_durations2
         feature_dict["window_size"] = window_duration
         feature_dict["window_start"] = window_start
         feature_dict["window_end"] = window_end
