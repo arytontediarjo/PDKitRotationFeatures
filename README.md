@@ -1,4 +1,4 @@
-# Gait Feature Extraction using PDKit & Rotation Features
+# Sage Bionetworks - Gait Feature Extraction using PDKit & Rotation Features
 
 **Author: Aryton Tediarjo, Larsson Omberg**
 
